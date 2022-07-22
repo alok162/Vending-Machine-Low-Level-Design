@@ -1,11 +1,13 @@
 package com.example.Vending;
 
-public class Item {
+public abstract class Item {
 
+    private Items item;
     private int price;
     private int quantity;
 
-    public Item(int price, int quantity) {
+    public Item(Items item, int price, int quantity) {
+        this.item = item;
         this.price = price;
         this.quantity = quantity;
     }
@@ -14,7 +16,7 @@ public class Item {
         return price;
     }
 
-    public void decrementQuantity() {
+    public void deductQuantity() {
         this.quantity--;
     }
 
